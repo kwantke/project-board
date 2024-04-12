@@ -1,0 +1,51 @@
+debug: false
+management.endpoints.web.exposure.include: "*"
+
+
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/board
+    username: uno
+    password: uno01
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    # resources/data.sql 사용하기위해 사용됨.
+    defer-datasource-initialization: true
+    hibernate.ddl-auto: create
+    open-in-view: false
+    show_sql: true
+    properties:
+      hibernate.format_sql: true
+      hibernate.default_batch_fetch_size: 100
+      hibernate.use_sql_comments: true
+      hibernate:
+        show_sql: true
+  #    h2.console.enabled: true
+  sql.init.mode: always
+    # thymeleaf.cache: false
+#   data.rest:
+#     base-path: /api
+#     detection-strategy: annotated
+logging:
+  level:
+    com.example.projectboard: debug
+    #request, response ??? ??
+    org.springframework.web.servlet: debug
+    #jpa ?? ??
+    org:
+      hibernate:
+        type:
+          descriptor:
+            sql: trace
+        #springboot 3.0 이상부터 logging.level.org.hibernate.orm.jdbc.bind: trace 로 해야 jpa 쿼리 parameter 로그 확인 가능
+        orm:
+          jdbc:
+            bind: trace
+
+---
+
+spring:
+  config.activate.on-profile: testdb
+
+
