@@ -33,13 +33,16 @@ spring:
         show_sql: true
 #  h2.console.enabled: true
   sql.init.mode: always
-    # thymeleaf.cache: false
   data.rest:
       base-path: /api
       detection-strategy: annotated
-#   data.rest:
-#     base-path: /api
-#     detection-strategy: annotated
+  thymeleaf3:
+    decoupled-logic: false
+
+
+
+
+
 logging:
   level:
     com.example.projectboard: debug

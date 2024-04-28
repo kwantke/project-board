@@ -1,6 +1,6 @@
 plugins {
   id 'java'
-  id 'org.springframework.boot' version '3.2.4'
+  id 'org.springframework.boot' version '3.1.5'
   id 'io.spring.dependency-management' version '1.1.4'
 }
 
@@ -38,6 +38,10 @@ dependencies {
   runtimeOnly 'com.mysql:mysql-connector-j'
 
   compileOnly 'org.projectlombok:lombok'
+
+  // 커스텀 config 설정관련 키값을 properties.yml 추가하여 설정 가능 예: spring.thymeleaf3
+  annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+
   developmentOnly 'org.springframework.boot:spring-boot-devtools'
   annotationProcessor 'org.projectlombok:lombok'
   testImplementation 'org.springframework.boot:spring-boot-starter-test'
