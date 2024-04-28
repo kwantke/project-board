@@ -17,6 +17,7 @@ import java.util.List;
 @Controller
 public class ArticleController {
 
+
   @GetMapping
   public String articles(ModelMap map) {
     map.addAttribute("articles", List.of());
