@@ -1,14 +1,11 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <title>게시판 페이지</title>
 </head>
 <body>
-  <header>
-    header 삽입부
-    <hr>
-  </header>
+  <header th:replace="header :: header"></header>
 
   <main>
     <form>
@@ -45,7 +42,7 @@
           <td>두번째글</td>
           <td>#spring</td>
           <td>Uno</td>
-          <td>2022-01-0x</td>
+          <td>2022-01-02</td>
         </tr>
         <tr>
           <td>세번째글</td>
@@ -69,7 +66,7 @@
     </nav>
   </main>
 
-  <footer>
+  <footer th:replace="footer :: footer">
     <hr>
     footer 삽입부
   </footer>
