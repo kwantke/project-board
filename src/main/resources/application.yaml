@@ -1,7 +1,14 @@
 debug: false
 management.endpoints.web.exposure.include: "*"
 
-
+# 서버 재기동 없이 Thymeleaf 수정시 바로 reload 됨.
+# 아래와 같이 prefix로 위치 설정은 해줘야한다. 이유는 default 위치가 /templates/로 되어 있기때무이다.
+# 그리고 cache 와 livereload.enable 설정을 따로 해주지 않아도 되나,
+# 이런 설정도 추가로 할수 있다라는 점을 참고하자.
+# 단, 운영에는 주석처리한 부분을 적용하면 안된다. 이유는 서버에 무리를 줄수 있다.
+#spring.thymeleaf.cache: false
+spring.thymeleaf.prefix: file:src/main/resources/templates/
+#spring.devtools.livereload.enabled: true #default
 
 spring:
   datasource:
