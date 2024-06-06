@@ -20,10 +20,10 @@ spring:
 #    username: sa
 #    driver-class-name: org.h2.Driver
   jpa:
+    open-in-view: false
     # resources/data.sql 사용하기위해 사용됨.
     defer-datasource-initialization: true
     hibernate.ddl-auto: create
-    open-in-view: false
     show_sql: true
     properties:
       hibernate.format_sql: true
