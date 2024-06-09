@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <thlogic>
-  <attr sel="#header" th:replace="header :: header"></attr>
+  <attr sel="#header" th:replace="header :: header2"></attr>
   <attr sel="#footer" th:replace="footer :: footer"></attr>
 
   <attr sel="#article-table">
