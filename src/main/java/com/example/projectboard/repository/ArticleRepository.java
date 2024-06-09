@@ -19,7 +19,12 @@ public interface ArticleRepository extends
         QuerydslBinderCustomizer<QArticle>
 {
 
-  Page<Article> findByTitle(String title, Pageable pageable);
+  //Containing 을 추가하면 like '%text%'(양쪽에 와일드카드로 %를 붙임) 로 조회한다.
+  Page<Article> findByTitleContaining(String title, Pageable pageable);
+  Page<Article> findByContentContaining(String content, Pageable pageable);
+  Page<Article> findByUserAccount_UserIdContaining(String userId, Pageable pageable);
+  Page<Article> findByUserAccount_NicknameContaining(String nickname, Pageable pageable);
+  Page<Article> findByHashtag(String hashtage, Pageable pageable);
 
   @Override
   default void customize(QuerydslBindings bindings, QArticle root) {
